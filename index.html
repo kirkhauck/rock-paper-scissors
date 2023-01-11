@@ -12,12 +12,13 @@
       <img src="./assets/black-and-white-alien.png" alt="Player icon">
       <h3>Human</h3>
       <p>Score: <span>0</span></p>
+      <button class="hidden">Change Game</button>
     </section>
     <main>
       <h1>Rock, Paper Scissors</h1>
-      <h2>Choose your game!</h2>
-      <section class="gameboard">
-        <section class="mode-selection">
+      <h2>Choose your difficulty!</h2>
+      <section id="modeSelectionSection" class="gameboard">
+        <section id="easyModeSelector" class="mode-selection">
           <h3>Easy</h3>
           <ul>
             <li>Rock > Scissors</li>
@@ -25,7 +26,7 @@
             <li>Paper > Rock</li>
           </ul>
         </section>
-        <section class="mode-selection">
+        <section id="hardModeSelector" class="mode-selection">
           <h3>Hard</h3>
           <ul>
             <li>Cat > Mouse & Monkey</li>
@@ -36,6 +37,18 @@
           </ul>
         </section>
       </section>
+      <section id="easyModeSection" class="gameboard game-display hidden">
+        <img src="./assets/happy-rocks.png" alt="rock" id="rock" class="fighter">
+        <img src="./assets/lines-paper.png" alt="paper" id="paper" class="fighter">
+        <img src="./assets/lines-scissors.png" alt="scissors" id="scissors" class="fighter">
+      </section>
+      <section id="hardModeSection" class="gameboard game-display hidden">
+        <img src="./assets/cat.png" alt="cat" id="cat" class="fighter">
+        <img src="./assets/dog.png" alt="dog" id="dog" class="fighter">
+        <img src="./assets/mouse.png" alt="mouse" id="mouse" class="fighter">
+        <img src="./assets/monkey.png" alt="monkey" id="monkey" class="fighter">
+        <img src="./assets/elephant.png" alt="elephant" id="elephant" class="fighter">
+      </section>
     </main>
     <section class="column">
       <img src="./assets/black-and-white-alien.png" alt="Computer icon">
@@ -44,5 +57,6 @@
     </section>
     <script src="./src/player.js"></script>
     <script src="./src/board.js"></script>
+    <script src="./src/scripts.js"></script>
   </body>
 </html>

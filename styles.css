@@ -39,6 +39,11 @@ main {
   justify-content: space-evenly;
 }
 
+.game-display {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 .mode-selection {
   width: 250px;
   text-align: center;
@@ -60,4 +65,9 @@ ul {
 img {
   width: 75px;
   height: 75px;
+}
+
+.fighter {
+  width: 200px;
+  height: 200px;
 }

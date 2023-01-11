@@ -19,6 +19,7 @@ changeGameButton.addEventListener('click', returnToGameSelect);
 easyModeSection.addEventListener('click', function() {
   board.human.takeTurn(event);
 });
+
 // Functions
 function setupEasyGame() {
   board.changeBoard('easy')

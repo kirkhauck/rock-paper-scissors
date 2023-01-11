@@ -15,9 +15,9 @@
     </section>
     <main>
       <h1>Rock, Paper Scissors</h1>
-      <h2>Choose your game!</h2>
-      <section class="gameboard">
-        <section class="mode-selection">
+      <h2>Choose your difficulty!</h2>
+      <section id="modeSelectionSection" class="gameboard">
+        <section id="easyModeSelector" class="mode-selection">
           <h3>Easy</h3>
           <ul>
             <li>Rock > Scissors</li>
@@ -25,7 +25,7 @@
             <li>Paper > Rock</li>
           </ul>
         </section>
-        <section class="mode-selection">
+        <section id="hardModeSelector" class="mode-selection">
           <h3>Hard</h3>
           <ul>
             <li>Cat > Mouse & Monkey</li>
@@ -36,6 +36,12 @@
           </ul>
         </section>
       </section>
+      <section id="easyModeSection" class="gameboard hidden">
+
+      </section>
+      <section id="hardModeSection" class="gameboard hidden">
+
+      </section>
     </main>
     <section class="column">
       <img src="./assets/black-and-white-alien.png" alt="Computer icon">
@@ -44,5 +50,6 @@
     </section>
     <script src="./src/player.js"></script>
     <script src="./src/board.js"></script>
+    <script src="./src/scripts.js"></script>
   </body>
 </html>

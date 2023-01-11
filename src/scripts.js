@@ -1,5 +1,7 @@
 // Global Variables
 var board = new Board;
+var easyFighters = ['rock', 'paper', 'scissors'];
+var hardFighters = ['cat', 'dog', 'mouse', 'monkey', 'elephant'];
 
 // DOM Variables
 var subtitle = document.querySelector('h2');
@@ -14,7 +16,9 @@ var changeGameButton = document.querySelector('button');
 easyModeSelector.addEventListener('click', setupEasyGame);
 hardModeSelector.addEventListener('click', setupHardGame);
 changeGameButton.addEventListener('click', returnToGameSelect);
-
+easyModeSection.addEventListener('click', function() {
+  board.human.takeTurn(event);
+});
 // Functions
 function setupEasyGame() {
   board.changeBoard('easy')

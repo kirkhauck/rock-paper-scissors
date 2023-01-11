@@ -4,14 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Rock Paper Scissors</title>
   </head>
   <body>
+    <section class="column">
+      <img src="./assets/black-and-white-alien.png" alt="Player icon">
+      <h3>Human</h3>
+      <p>Score: <span>0</span></p>
+    </section>
     <main>
       <h1>Rock, Paper Scissors</h1>
       <h2>Choose your game!</h2>
-      <section>
-        <section>
+      <section class="gameboard">
+        <section class="mode-selection">
           <h3>Easy</h3>
           <ul>
             <li>Rock > Scissors</li>
@@ -19,7 +25,7 @@
             <li>Paper > Rock</li>
           </ul>
         </section>
-        <section>
+        <section class="mode-selection">
           <h3>Hard</h3>
           <ul>
             <li>Cat > Mouse & Monkey</li>
@@ -31,12 +37,7 @@
         </section>
       </section>
     </main>
-    <section>
-      <img src="./assets/black-and-white-alien.png" alt="Player icon">
-      <h3>Human</h3>
-      <p>Score: <span>0</span></p>
-    </section>
-    <section>
+    <section class="column">
       <img src="./assets/black-and-white-alien.png" alt="Computer icon">
       <h3>Computer</h3>
       <p>Score: <span>0</span></p>

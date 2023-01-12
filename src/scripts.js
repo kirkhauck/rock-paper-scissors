@@ -18,9 +18,13 @@ hardModeSelector.addEventListener('click', setupHardGame);
 changeGameButton.addEventListener('click', returnToGameSelect);
 easyModeSection.addEventListener('click', function() {
   board.human.takeTurn(event);
+  board.computer.takeTurn(event);
+  board.playEasyGame();
 });
 hardModeSection.addEventListener('click', function() {
   board.human.takeTurn(event);
+  board.computer.takeTurn(event);
+  board.playHardGame();
 });
 
 // Functions

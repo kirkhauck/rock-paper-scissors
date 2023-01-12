@@ -23,11 +23,13 @@ easyModeSection.addEventListener('click', function() {
   board.playEasyGame(event);
   showScore();
   showResults();
+  setTimeout(setupEasyGame, 3000);
 });
 hardModeSection.addEventListener('click', function() {
   board.playHardGame(event);
   showScore();
   showResults();
+  setTimeout(setupHardGame, 3000);
 });
 
 // Functions
@@ -35,6 +37,7 @@ function setupEasyGame() {
   board.changeBoard('easy')
   subtitle.innerText = 'Choose your fighter!';
   modeSelectionDisplay.classList.add('hidden');
+  resultsSection.classList.add('hidden');
   easyModeSection.classList.remove('hidden');
   changeGameButton.classList.remove('hidden');
 }
@@ -43,6 +46,7 @@ function setupHardGame() {
   board.changeBoard('hard')
   subtitle.innerText = 'Choose your fighter!';
   modeSelectionDisplay.classList.add('hidden');
+  resultsSection.classList.add('hidden');
   hardModeSection.classList.remove('hidden');
   changeGameButton.classList.remove('hidden');
 }
@@ -52,6 +56,7 @@ function showResults() {
   var computerFighter = board.computer.fighter;
   easyModeSection.classList.add('hidden');
   hardModeSection.classList.add('hidden');
+  changeGameButton.classList.add('hidden');
   resultsSection.classList.remove('hidden');
   if (board.winner === 'human') {
     subtitle.innerText = 'You win!';
@@ -76,5 +81,7 @@ function returnToGameSelect() {
   subtitle.innerText = 'Choose your difficulty!';
   modeSelectionDisplay.classList.remove('hidden');
   resultsSection.classList.add('hidden');
+  easyModeSection.classList.add('hidden');
+  hardModeSection.classList.add('hidden');
   changeGameButton.classList.add('hidden');
 }

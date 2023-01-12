@@ -45,41 +45,52 @@ class Board {
     this.computer.takeTurn(event);
     var human = this.human.fighter;
     var computer = this.computer.fighter;
+    
     if (human === computer) {
-      this.winner = 'draw'
-    } else if (human === 'cat' && computer === 'mouse' || computer === 'monkey') {
-      this.human.score++;
-      this.winner = 'human'
-    } else if (human === 'cat' && computer === 'dog' || computer === 'elephant') {
-      this.computer.score++;
-      this.winner = 'computer'
-    } else if (human === 'dog' && computer === 'cat' || computer === 'monkey') {
-      this.human.score++;
-      this.winner = 'human'
-    } else if (human === 'dog' && computer === 'mouse'|| computer === 'elephant') {
-      this.computer.score++;
-      this.winner = 'computer'
-    } else if (human === 'mouse' && computer === 'elephant' || computer === 'dog') {
-      this.human.score++;
-      this.winner = 'human'
-    } else if (human === 'mouse' && computer === 'cat' || computer === 'monkey') {
-      this.computer.score++;
-      this.winner = 'computer'
-    } else if (human === 'monkey' && computer === 'mouse' || computer === 'elephant') {
-      this.human.score++;
-      this.winner = 'human'
-    } else if (human === 'monkey' && computer === 'cat' || computer === 'dog') {
-      this.computer.score++;
-      this.winner = 'computer'
-    } else if (human === 'elephant' && computer === 'cat' || computer === 'dog') {
-      this.human.score++;
-      this.winner = 'human'
-    } else if (human === 'elephant' && computer === 'mouse' || computer === 'monkey') {
-      this.computer.score++;
-      this.winner = 'computer'
+      this.winner = 'draw';
+    } else if (human === 'cat') {
+      if (computer === 'mouse' || computer === 'monkey') {
+        this.human.score++;
+        this.winner = 'human';
+      } else if (computer === 'dog' || computer === 'elephant') {
+        this.computer.score++;
+        this.winner = 'computer';
+      }
+    } else if (human === 'mouse') {
+      if (computer === 'dog' || computer === 'elephant') {
+        this.human.score++;
+        this.winner = 'human';
+      } else if (computer === 'monkey' || computer === 'cat') {
+        this.computer.score++;
+        this.winner = 'computer';
+      }
+    } else if (human === 'dog') {
+      if (computer === 'monkey' || computer === 'cat') {
+        this.human.score++;
+        this.winner = 'human';
+      } else if (computer === 'elephant' || computer === 'mouse') {
+        this.computer.score++;
+        this.winner = 'computer';
+      }
+    } else if (human === 'monkey') {
+      if (computer === 'elephant' || computer === 'mouse') {
+        this.human.score++;
+        this.winner = 'human';
+      } else if (computer === 'cat' || computer === 'dog') {
+        this.computer.score++;
+        this.winner = 'computer';
+      }
+    } else if (human === 'elephant') {
+      if (computer === 'cat' || computer === 'dog') {
+        this.human.score++;
+        this.winner = 'human';
+      } else if (computer === 'mouse' || computer === 'monkey') {
+        this.computer.score++;
+        this.winner = 'computer';
+      }
     }
   }
-
+  
   // resetGame() {
   //   this.difficulty = undefined;
   // }

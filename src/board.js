@@ -1,8 +1,7 @@
 class Board {
   constructor() {
-    // Replace token with image asset
-    this.human = new Player('Human', 'token');
-    this.computer = new Player('Computer', 'token');
+    this.human = new Player('Human', './assets/human-token.png');
+    this.computer = new Player('Computer', './assets/computer-token.png');
     this.difficulty = undefined;
     this.winner = undefined;
   }
@@ -90,8 +89,4 @@ class Board {
       }
     }
   }
-  
-  // resetGame() {
-  //   this.difficulty = undefined;
-  // }
 }

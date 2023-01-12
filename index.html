@@ -9,9 +9,9 @@
   </head>
   <body>
     <section class="column">
-      <img src="./assets/black-and-white-alien.png" alt="Player icon">
+      <img id="humanToken" src="" alt="Player token">
       <h3>Human</h3>
-      <p>Score: <span id="humanScore">0</span></p>
+      <p>Score: <span id="humanScore"></span></p>
       <button class="hidden">Change Game</button>
     </section>
     <main>
@@ -50,13 +50,12 @@
         <img src="./assets/elephant.png" alt="elephant" id="elephant" class="fighter">
       </section>
       <section id="resultsSection" class="gameboard game-display hidden">
-
       </section>
     </main>
     <section class="column">
-      <img src="./assets/black-and-white-alien.png" alt="Computer icon">
+      <img id="computerToken" src="" alt="Computer token">
       <h3>Computer</h3>
-      <p>Score: <span id="computerScore">0</span></p>
+      <p>Score: <span id="computerScore"></span></p>
     </section>
     <script src="./src/player.js"></script>
     <script src="./src/board.js"></script>

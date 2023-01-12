@@ -5,6 +5,8 @@ var hardFighters = ['cat', 'dog', 'mouse', 'monkey', 'elephant'];
 
 // DOM Variables
 var subtitle = document.querySelector('h2');
+var humanScoreDisplay = document.getElementById('humanScore');
+var computerScoreDisplay = document.getElementById('computerScore');
 var modeSelectionDisplay = document.getElementById('modeSelectionSection');
 var easyModeSection = document.getElementById('easyModeSection');
 var hardModeSection = document.getElementById('hardModeSection');
@@ -47,9 +49,16 @@ function setupHardGame() {
 function playGame(event) {
   if (event.target.classList.contains('fighter') && board.difficulty === 'easy') {
     board.playEasyGame();
+    showScore();
   } else if (event.target.classList.contains('fighter') && board.difficulty === 'hard') {
     board.playHardGame();
+    showScore();
   }
+}
+
+function showScore() {
+  humanScoreDisplay.innerText = board.human.score;
+  computerScoreDisplay.innerText = board.computer.score;
 }
 
 function returnToGameSelect() {

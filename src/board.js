@@ -9,6 +9,7 @@ class Board {
 
   changeBoard(gameMode) {
     this.difficulty = gameMode;
+    this.winner = undefined;
   }
 
   playEasyGame() {
@@ -37,7 +38,6 @@ class Board {
       this.computer.score++;
       this.winner = 'computer'
     }
-    showScore();
   }
 
   playHardGame() {
@@ -78,10 +78,9 @@ class Board {
       this.computer.score++;
       this.winner = 'computer'
     }
-    showScore();
   }
 
-  resetGame() {
-    this.difficulty = undefined;
-  }
+  // resetGame() {
+  //   this.difficulty = undefined;
+  // }
 }

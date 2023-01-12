@@ -19,14 +19,10 @@ easyModeSelector.addEventListener('click', setupEasyGame);
 hardModeSelector.addEventListener('click', setupHardGame);
 changeGameButton.addEventListener('click', returnToGameSelect);
 easyModeSection.addEventListener('click', function() {
-  board.human.takeTurn(event);
-  board.computer.takeTurn(event);
-  playGame(event);
+  board.playEasyGame(event);
 });
 hardModeSection.addEventListener('click', function() {
-  board.human.takeTurn(event);
-  board.computer.takeTurn(event);
-  playGame(event);
+  board.playHardGame(event);
 });
 
 // Functions
@@ -44,16 +40,6 @@ function setupHardGame() {
   modeSelectionDisplay.classList.add('hidden');
   hardModeSection.classList.remove('hidden');
   changeGameButton.classList.remove('hidden');
-}
-
-function playGame(event) {
-  if (event.target.classList.contains('fighter') && board.difficulty === 'easy') {
-    board.playEasyGame();
-    showScore();
-  } else if (event.target.classList.contains('fighter') && board.difficulty === 'hard') {
-    board.playHardGame();
-    showScore();
-  }
 }
 
 function showScore() {

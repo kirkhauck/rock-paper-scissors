@@ -12,6 +12,8 @@ class Board {
   }
 
   playEasyGame() {
+    this.human.takeTurn(event);
+    this.computer.takeTurn(event);
     var human = this.human.fighter;
     var computer = this.computer.fighter;
     if (human === computer) {
@@ -35,9 +37,12 @@ class Board {
       this.computer.score++;
       this.winner = 'computer'
     }
+    showScore();
   }
 
   playHardGame() {
+    this.human.takeTurn(event);
+    this.computer.takeTurn(event);
     var human = this.human.fighter;
     var computer = this.computer.fighter;
     if (human === computer) {
@@ -73,6 +78,7 @@ class Board {
       this.computer.score++;
       this.winner = 'computer'
     }
+    showScore();
   }
 
   resetGame() {

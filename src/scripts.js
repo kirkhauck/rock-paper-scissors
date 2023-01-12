@@ -39,8 +39,6 @@ hardModeSection.addEventListener('click', function() {
 });
 
 // Functions
-
-
 function setupEasyGame() {
   board.changeBoard('easy')
   subtitle.innerText = 'Choose your fighter!';

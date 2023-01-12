@@ -1,7 +1,7 @@
 * {
   margin: 0;
-  border: 2px solid green;
-  font-family: sans-serif;
+  /* border: 2px solid green; */
+  font-family: 'Fredoka One', cursive;
 }
 
 .hidden {
@@ -28,6 +28,11 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #b4b4ce;
+}
+
+button {
+  cursor: pointer;
 }
 
 .gameboard {
@@ -37,6 +42,7 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  /* background-color: aqua; */
 }
 
 .game-display {
@@ -46,7 +52,22 @@ main {
 
 .mode-selection {
   width: 250px;
+  padding-bottom: 20px;
+  border-radius: 4px;
+  color:#f0ffff;
+  background-color: #8c8c9f;
+  box-shadow: 4px 4px #787888;
   text-align: center;
+  cursor: pointer;
+}
+
+.mode-selection:hover {
+  background-color: #757583;
+}
+
+.mode-selection:active {
+  box-shadow: 1px, 1px, black;
+  transform: translateY(3px);
 }
 
 ul {
@@ -60,6 +81,8 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: #f0ffff;
+  background-color: #323031;
 }
 
 img {
@@ -70,4 +93,5 @@ img {
 .fighter {
   width: 200px;
   height: 200px;
+  cursor: pointer;
 }

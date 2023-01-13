@@ -1,7 +1,8 @@
 * {
   margin: 0;
-  /* border: 2px solid green; */
+  /* border: 2px solid red; */
   font-family: 'Fredoka One', cursive;
+  color: #ffffff;
 }
 
 .hidden {
@@ -23,16 +24,21 @@ h1, h2, h3 {
 }
 
 main {
-  width: 50%;
+  width: 60%;
   padding-top: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #b4b4ce;
+  background-color: #4280b0;
 }
 
 button {
   cursor: pointer;
+  background-color: #162a41;
+  border-radius: 4px;
+  font-size: 20px;
+  padding: 10px;
+  margin-top: 60px;
 }
 
 .gameboard {
@@ -41,8 +47,8 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
-  /* background-color: aqua; */
+  justify-content: center;
+  align-content: center;
 }
 
 .game-display {
@@ -52,21 +58,23 @@ button {
 
 .mode-selection {
   width: 250px;
+  margin: 5%;
   padding-bottom: 20px;
   border-radius: 4px;
-  color:#f0ffff;
-  background-color: #8c8c9f;
-  box-shadow: 4px 4px #787888;
+  font-size: 20px;
+  color:#ffffff;
+  background-color: #162a41;
+  box-shadow: 4px 4px #000000;
   text-align: center;
   cursor: pointer;
 }
 
 .mode-selection:hover {
-  background-color: #757583;
+  background-color: #0f1c2b;
 }
 
 .mode-selection:active {
-  box-shadow: 1px, 1px, black;
+  box-shadow: none;
   transform: translateY(3px);
 }
 
@@ -76,13 +84,14 @@ ul {
 }
 
 .column {
-  width: 25%;
+  width: 20%;
   padding-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #f0ffff;
-  background-color: #323031;
+  color: #ffffff;
+  font-size: 20px;
+  background-color: #295174;
 }
 
 img {
@@ -91,7 +100,15 @@ img {
 }
 
 .fighter {
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   cursor: pointer;
+}
+
+.fighter:hover {
+  background-color: #3b76a2
+}
+
+.fighter:active {
+  box-shadow: inset 0px 0px 5px #000000;
 }

@@ -11,30 +11,30 @@
   <body>
     <section class="column">
       <img id="humanToken" src="" alt="Player token">
-      <h3>Human</h3>
+      <h2>Human</h2>
       <p>Score: <span id="humanScore"></span></p>
       <button class="hidden">Change Game</button>
     </section>
     <main>
       <h1>Rock, Paper Scissors</h1>
-      <h2>Choose your difficulty!</h2>
+      <h2 id="subtitle">Choose your difficulty!</h2>
       <section id="modeSelectionSection" class="gameboard">
         <section id="easyModeSelector" class="mode-selection">
           <h3>Easy</h3>
           <ul>
-            <li>Rock > Scissors</li>
-            <li>Scissors > Paper</li>
-            <li>Paper > Rock</li>
+            <li>🪨 beats ✂️</li>
+            <li>✂️ beats 📄</li>
+            <li>📄 beats 🪨</li>
           </ul>
         </section>
         <section id="hardModeSelector" class="mode-selection">
           <h3>Hard</h3>
           <ul>
-            <li>Cat > Mouse & Monkey</li>
-            <li>Mouse > Elephant & Dog</li>
-            <li>Elephant > Dog & Cat</li>
-            <li>Dog > Monkey & Cat</li>
-            <li>Monkey > Elephant & Mouse</li>
+            <li>🐱 beats 🐭 and 🐵</li>
+            <li>🐭 beats 🐘 and 🐶</li>
+            <li>🐘 beats 🐶 and 🐱</li>
+            <li>🐶 beats 🐵 and 🐱</li>
+            <li>🐵 beats 🐘 and 🐭</li>
           </ul>
         </section>
       </section>
@@ -55,7 +55,7 @@
     </main>
     <section class="column">
       <img id="computerToken" src="" alt="Computer token">
-      <h3>Computer</h3>
+      <h2>Computer</h2>
       <p>Score: <span id="computerScore"></span></p>
     </section>
     <script src="./src/player.js"></script>

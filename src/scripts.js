@@ -4,7 +4,7 @@ var easyFighters = ['rock', 'paper', 'scissors'];
 var hardFighters = ['cat', 'dog', 'mouse', 'monkey', 'elephant'];
 
 // DOM Variables
-var subtitle = document.querySelector('h2');
+var subtitle = document.getElementById('subtitle');
 var humanToken = document.getElementById('humanToken');
 var humanScoreDisplay = document.getElementById('humanScore');
 var computerToken = document.getElementById('computerToken');
@@ -39,6 +39,40 @@ hardModeSection.addEventListener('click', function() {
 });
 
 // Functions
+
+  // sandbox
+
+  // var rock = {
+  //   name: 'rock',
+  //   winsAgainst: 'scissors',
+  //   losesTo: 'paper'
+  // }
+  
+  // var paper = {
+  //   name: 'paper',
+  //   winsAgainst: 'rock',
+  //   losesTo: 'scissors'
+  // }
+  
+  // var scissors = {
+  //   name: 'scissors',
+  //   winsAgainst: 'paper',
+  //   losesTo: 'rock'
+  // }
+  
+//humanChar rock --- computerChar scissors
+
+  // function checkWinner(humanChar, computerChar) {
+  //   checkIfDraw();
+  //   if (humanChar.name === computerChar.winsAgainst) {
+  //     // human wins
+  //   } else {
+  //     // computer wins
+  //   }
+  // }
+  
+    // sandbox
+
 function setupEasyGame() {
   board.changeBoard('easy')
   subtitle.innerText = 'Choose your fighter!';

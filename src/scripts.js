@@ -1,5 +1,5 @@
 // Global Variables
-var board = new Board;
+var board = new Board({name: 'Human', token: './assets/human-token.png'}, {name: 'Computer', token: './assets/computer-token.png'});
 var easyFighters = ['rock', 'paper', 'scissors'];
 var hardFighters = ['cat', 'dog', 'mouse', 'monkey', 'elephant'];
 

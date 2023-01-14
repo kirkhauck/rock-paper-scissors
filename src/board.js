@@ -1,7 +1,7 @@
 class Board {
-  constructor() {
-    this.human = new Player('Human', './assets/human-token.png');
-    this.computer = new Player('Computer', './assets/computer-token.png');
+  constructor(player1, player2) {
+    this.human = new Player(player1);
+    this.computer = new Player(player2);
     this.difficulty = undefined;
     this.winner = undefined;
   }

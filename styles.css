@@ -69,11 +69,22 @@ img {
 
 .nav-button {
   cursor: pointer;
+  border: 0;
   background-color: #162a41;
   border-radius: 4px;
   font-size: 20px;
+  box-shadow: 4px, 4px, #000000!important;
   padding: 10px;
   margin-top: 60px;
+}
+
+.nav-button:hover {
+  background-color: #0f1c2b;
+}
+
+.nav-button:active {
+  box-shadow: none;
+  transform: translateY(3px);
 }
 
 .mode-button {
@@ -95,11 +106,11 @@ ul {
   padding: 0;
 }
 
-.mode-selection:hover {
+.mode-button:hover {
   background-color: #0f1c2b;
 }
 
-.mode-selection:active {
+.mode-button:active {
   box-shadow: none;
   transform: translateY(3px);
 }

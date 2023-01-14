@@ -13,21 +13,21 @@
       <img id="humanToken" src="" alt="Player token">
       <h2>Human</h2>
       <p>Score: <span id="humanScore"></span></p>
-      <button class="hidden">Change Game</button>
+      <button class="nav-button hidden">Change Game</button>
     </section>
     <main>
       <h1>Rock, Paper Scissors</h1>
       <h2 id="subtitle">Choose your difficulty!</h2>
       <section id="modeSelectionSection" class="gameboard">
-        <section id="easyModeSelector" class="mode-selection">
+        <button id="easyModeSelector" class="mode-button" type="button">
           <h3>Easy</h3>
           <ul>
             <li>🪨 beats ✂️</li>
             <li>✂️ beats 📄</li>
             <li>📄 beats 🪨</li>
           </ul>
-        </section>
-        <section id="hardModeSelector" class="mode-selection">
+        </button>
+        <button id="hardModeSelector" class="mode-button" type="button">
           <h3>Hard</h3>
           <ul>
             <li>🐱 beats 🐭 and 🐵</li>
@@ -36,19 +36,35 @@
             <li>🐶 beats 🐵 and 🐱</li>
             <li>🐵 beats 🐘 and 🐭</li>
           </ul>
-        </section>
+        </button>
       </section>
       <section id="easyModeSection" class="gameboard game-display hidden">
-        <img src="./assets/rock.png" alt="rock" id="rock" class="fighter">
-        <img src="./assets/paper.png" alt="paper" id="paper" class="fighter">
-        <img src="./assets/scissors.png" alt="scissors" id="scissors" class="fighter">
-      </section>
+        <button class="fighter-button" type="button">
+          <img src="./assets/rock.png" alt="rock" id="rock" class="fighter">
+        </button>
+        <button class="fighter-button" type="button">
+          <img src="./assets/paper.png" alt="paper" id="paper" class="fighter">
+        </button>
+        <button class="fighter-button" type="button">
+          <img src="./assets/scissors.png" alt="scissors" id="scissors" class="fighter">
+        </button>
+        </section>
       <section id="hardModeSection" class="gameboard game-display hidden">
-        <img src="./assets/cat.png" alt="cat" id="cat" class="fighter">
-        <img src="./assets/dog.png" alt="dog" id="dog" class="fighter">
-        <img src="./assets/mouse.png" alt="mouse" id="mouse" class="fighter">
-        <img src="./assets/monkey.png" alt="monkey" id="monkey" class="fighter">
-        <img src="./assets/elephant.png" alt="elephant" id="elephant" class="fighter">
+        <button class="fighter-button" type="button">
+          <img src="./assets/cat.png" alt="cat" id="cat" class="fighter">
+        </button>
+        <button class="fighter-button" type="button">
+          <img src="./assets/dog.png" alt="dog" id="dog" class="fighter">
+        </button>
+        <button class="fighter-button" type="button">
+          <img src="./assets/mouse.png" alt="mouse" id="mouse" class="fighter">
+        </button>
+        <button class="fighter-button" type="button">
+          <img src="./assets/monkey.png" alt="monkey" id="monkey" class="fighter">
+        </button>
+        <button class="fighter-button" type="button">
+          <img src="./assets/elephant.png" alt="elephant" id="elephant" class="fighter">
+        </button>
       </section>
       <section id="resultsSection" class="gameboard game-display hidden">
       </section>

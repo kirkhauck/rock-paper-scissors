@@ -16,5 +16,5 @@ class Player {
       var fighterIndex = Math.floor(Math.random() * hardFighters.length);
       this.fighter = hardFighters[fighterIndex];
     }
-  } 
+  }
 }

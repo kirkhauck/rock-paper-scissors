@@ -4,8 +4,10 @@ var easyFighters = ['rock', 'paper', 'scissors'];
 var hardFighters = ['cat', 'dog', 'mouse', 'monkey', 'elephant'];
 
 // DOM Variables
-var subtitle = document.querySelector('h2');
+var subtitle = document.getElementById('subtitle');
+var humanToken = document.getElementById('humanToken');
 var humanScoreDisplay = document.getElementById('humanScore');
+var computerToken = document.getElementById('computerToken');
 var computerScoreDisplay = document.getElementById('computerScore');
 var modeSelectionDisplay = document.getElementById('modeSelectionSection');
 var easyModeSection = document.getElementById('easyModeSection');
@@ -16,6 +18,10 @@ var hardModeSelector = document.getElementById('hardModeSelector');
 var changeGameButton = document.querySelector('button');
 
 // Event Listeners
+window.addEventListener('load', function() {
+  showPlayerTokens();
+  showScore();
+});
 easyModeSelector.addEventListener('click', setupEasyGame);
 hardModeSelector.addEventListener('click', setupHardGame);
 changeGameButton.addEventListener('click', returnToGameSelect);
@@ -33,6 +39,40 @@ hardModeSection.addEventListener('click', function() {
 });
 
 // Functions
+
+  // sandbox
+
+  // var rock = {
+  //   name: 'rock',
+  //   winsAgainst: 'scissors',
+  //   losesTo: 'paper'
+  // }
+  
+  // var paper = {
+  //   name: 'paper',
+  //   winsAgainst: 'rock',
+  //   losesTo: 'scissors'
+  // }
+  
+  // var scissors = {
+  //   name: 'scissors',
+  //   winsAgainst: 'paper',
+  //   losesTo: 'rock'
+  // }
+  
+//humanChar rock --- computerChar scissors
+
+  // function checkWinner(humanChar, computerChar) {
+  //   checkIfDraw();
+  //   if (humanChar.name === computerChar.winsAgainst) {
+  //     // human wins
+  //   } else {
+  //     // computer wins
+  //   }
+  // }
+  
+    // sandbox
+
 function setupEasyGame() {
   board.changeBoard('easy')
   subtitle.innerText = 'Choose your fighter!';
@@ -74,6 +114,11 @@ function showResults() {
 function showScore() {
   humanScoreDisplay.innerText = board.human.score;
   computerScoreDisplay.innerText = board.computer.score;
+}
+
+function showPlayerTokens() {
+  humanToken.src = board.human.token;
+  computerToken.src = board.computer.token;
 }
 
 function returnToGameSelect() {

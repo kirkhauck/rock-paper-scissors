@@ -26,16 +26,10 @@ easyModeSelector.addEventListener('click', setupEasyGame);
 hardModeSelector.addEventListener('click', setupHardGame);
 changeGameButton.addEventListener('click', returnToGameSelect);
 easyModeSection.addEventListener('click', function() {
-  board.playEasyGame(event);
-  showScore();
-  showResults();
-  setTimeout(setupEasyGame, 3000);
+  playEasyGame(event);
 });
 hardModeSection.addEventListener('click', function() {
-  board.playHardGame(event);
-  showScore();
-  showResults();
-  setTimeout(setupHardGame, 3000);
+  playHardGame(event)
 });
 
 // Functions
@@ -89,6 +83,24 @@ function setupHardGame() {
   resultsSection.classList.add('hidden');
   hardModeSection.classList.remove('hidden');
   changeGameButton.classList.remove('hidden');
+}
+
+function playEasyGame(event) {
+  if (event.target.classList.contains('fighter')) {
+    board.getWinnerEasy(event);
+    showScore();
+    showResults();
+    setTimeout(setupEasyGame, 3000);
+  }
+}
+
+function playHardGame(event) {
+  if (event.target.classList.contains('fighter')) {
+    board.getWinnerHard(event);
+    showScore();
+    showResults();
+    setTimeout(setupHardGame, 3000);
+  }
 }
 
 function showResults() {

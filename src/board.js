@@ -11,7 +11,7 @@ class Board {
     this.winner = undefined;
   }
 
-  playEasyGame() {
+  getWinnerEasy() {
     this.human.takeTurn(event);
     this.computer.takeTurn(event);
     var human = this.human.fighter;
@@ -39,7 +39,7 @@ class Board {
     }
   }
 
-  playHardGame() {
+  getWinnerHard() {
     this.human.takeTurn(event);
     this.computer.takeTurn(event);
     var human = this.human.fighter;

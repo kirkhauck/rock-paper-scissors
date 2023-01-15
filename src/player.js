@@ -7,7 +7,7 @@ class Player {
   }
 
   takeTurn(event) {
-    if (this.name === 'Human' && event.target.classList.contains('fighter')) {
+    if (this.name === 'Human') {
       this.fighter = event.target.id;
     } else if (board.difficulty === 'easy') {
       var fighterIndex = Math.floor(Math.random() * easyFighters.length);

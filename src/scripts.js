@@ -87,7 +87,7 @@ function setupHardGame() {
 
 function playEasyGame(event) {
   if (event.target.classList.contains('fighter')) {
-    board.getWinnerEasy(event);
+    board.updateWinnerEasy(event);
     showScore();
     showResults();
     setTimeout(setupEasyGame, 3000);
@@ -96,7 +96,7 @@ function playEasyGame(event) {
 
 function playHardGame(event) {
   if (event.target.classList.contains('fighter')) {
-    board.getWinnerHard(event);
+    board.updateWinnerHard(event);
     showScore();
     showResults();
     setTimeout(setupHardGame, 3000);

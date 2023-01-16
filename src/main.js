@@ -21,8 +21,10 @@ window.addEventListener('load', function() {
   showPlayerTokens();
   showScore();
 });
-easyModeSelector.addEventListener('click', setupEasyGame);
-hardModeSelector.addEventListener('click', setupHardGame);
+easyModeSelector.addEventListener('click', setupGameBoard);
+hardModeSelector.addEventListener('click', setupGameBoard);
+// easyModeSelector.addEventListener('click', setupEasyGame);
+// hardModeSelector.addEventListener('click', setupHardGame);
 changeGameButton.addEventListener('click', returnToGameSelect);
 // easyModeSection.addEventListener('click', function() {
 //   playGame(event);
@@ -33,25 +35,36 @@ changeGameButton.addEventListener('click', returnToGameSelect);
 
 // Functions
 
-function setupEasyGame() {
-  game.changeBoard('easy')
-  subtitle.innerText = 'Choose your fighter!';
-  modeSelectionDisplay.classList.add('hidden');
-  resultsSection.classList.add('hidden');
-  gameBoard.classList.remove('hidden')
-  // easyModeSection.classList.remove('hidden');
-  changeGameButton.classList.remove('hidden');
+function setupGameBoard() {
+  game.changeDifficulty(event);
 }
 
-function setupHardGame() {
-  game.changeBoard('hard')
-  subtitle.innerText = 'Choose your fighter!';
-  modeSelectionDisplay.classList.add('hidden');
-  resultsSection.classList.add('hidden');
-  gameBoard.classList.remove('hidden');
-  // hardModeSection.classList.remove('hidden');
-  changeGameButton.classList.remove('hidden');
-}
+// function displayGameBoard() {
+//   game.changeBoard(event);
+//   subtitle.innerText = 'Choose your fighter!';
+//   modeSelectionDisplay.classList.add('hidden');
+//   resultsSection.classList.add('hidden');
+//   // easyModeSection.classList.remove('hidden');
+//   changeGameButton.classList.remove('hidden');
+// }
+
+// function setupEasyGame() {
+//   game.changeBoard('easy')
+//   subtitle.innerText = 'Choose your fighter!';
+//   modeSelectionDisplay.classList.add('hidden');
+//   resultsSection.classList.add('hidden');
+//   // easyModeSection.classList.remove('hidden');
+//   changeGameButton.classList.remove('hidden');
+// }
+
+// function setupHardGame() {
+//   game.changeBoard('hard')
+//   subtitle.innerText = 'Choose your fighter!';
+//   modeSelectionDisplay.classList.add('hidden');
+//   resultsSection.classList.add('hidden');
+//   // hardModeSection.classList.remove('hidden');
+//   changeGameButton.classList.remove('hidden');
+// }
 
 function playGame(event) {
   if (event.target.classList.contains('fighter')) {
@@ -65,7 +78,6 @@ function playGame(event) {
 function showResults() {
   var humanFighter = game.human.fighter;
   var computerFighter = game.computer.fighter;
-  gameBoard.classList.add('hidden');
   // easyModeSection.classList.add('hidden');
   // hardModeSection.classList.add('hidden');
   changeGameButton.classList.add('hidden');
@@ -98,7 +110,6 @@ function returnToGameSelect() {
   subtitle.innerText = 'Choose your difficulty!';
   modeSelectionDisplay.classList.remove('hidden');
   resultsSection.classList.add('hidden');
-  gameBoard.classList.add('hidden');
   // easyModeSection.classList.add('hidden');
   // hardModeSection.classList.add('hidden');
   changeGameButton.classList.add('hidden');

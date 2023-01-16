@@ -88,6 +88,7 @@ class Game {
   }
 
   checkWinner() {
+    this.winner = undefined;
     this.human.takeTurn(event);
     this.computer.takeTurn(event);
     this.checkIfDraw();

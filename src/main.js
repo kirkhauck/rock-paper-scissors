@@ -29,6 +29,9 @@ modeSelectionDisplay.addEventListener('click', function() {
 // easyModeSelector.addEventListener('click', setupEasyGame);
 // hardModeSelector.addEventListener('click', setupHardGame);
 changeGameButton.addEventListener('click', returnToGameSelect);
+gameBoard.addEventListener('click', function() {
+  playGame(event);
+});
 // easyModeSection.addEventListener('click', function() {
 //   playGame(event);
 // });
@@ -72,15 +75,14 @@ function playGame(event) {
     game.checkWinner(event);
     showScore();
     showResults();
-    setTimeout(setupEasyGame, 3000);
+    setTimeout(showGameBoard, 3000);
   }
 }
 
 function showResults() {
   var humanFighter = game.human.fighter;
   var computerFighter = game.computer.fighter;
-  // easyModeSection.classList.add('hidden');
-  // hardModeSection.classList.add('hidden');
+  gameBoard.classList.add('hidden');
   changeGameButton.classList.add('hidden');
   resultsSection.classList.remove('hidden');
   if (game.winner === 'human') {

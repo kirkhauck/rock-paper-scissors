@@ -1,4 +1,4 @@
-class Board {
+class Game {
   constructor(player1, player2) {
     this.human = new Player(player1);
     this.computer = new Player(player2);

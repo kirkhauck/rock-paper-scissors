@@ -9,8 +9,6 @@ var computerToken = document.getElementById('computerToken');
 var computerScoreDisplay = document.getElementById('computerScore');
 var modeSelectionDisplay = document.getElementById('modeSelectionSection');
 var gameBoard = document.getElementById('gameBoard');
-// var easyModeSection = document.getElementById('easyModeSection');
-// var hardModeSection = document.getElementById('hardModeSection');
 var resultsSection = document.getElementById('resultsSection');
 var easyModeSelector = document.getElementById('easyModeSelector');
 var hardModeSelector = document.getElementById('hardModeSelector');
@@ -20,27 +18,19 @@ var changeGameButton = document.querySelector('button');
 window.addEventListener('load', function() {
   showPlayerTokens();
   showScore();
-});
+})
 modeSelectionDisplay.addEventListener('click', function() {
   setupGameBoard(event);
 });
-// easyModeSelector.addEventListener('click', setupGameBoard);
-// hardModeSelector.addEventListener('click', setupGameBoard);
-// easyModeSelector.addEventListener('click', setupEasyGame);
-// hardModeSelector.addEventListener('click', setupHardGame);
+
 changeGameButton.addEventListener('click', returnToGameSelect);
+
 gameBoard.addEventListener('click', function() {
   playGame(event);
 });
-// easyModeSection.addEventListener('click', function() {
-//   playGame(event);
-// });
-// hardModeSection.addEventListener('click', function() {
-//   playGame(event)
-// });
+
 
 // Functions
-
 function setupGameBoard(event) {
   var parentID = event.target.parentElement.id
   if (parentID === 'easyModeSelector' || parentID === 'hardModeSelector') {

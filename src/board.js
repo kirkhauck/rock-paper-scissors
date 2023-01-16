@@ -12,12 +12,14 @@ class Board {
     this.winner = undefined;
     if (this.difficulty === 'easy') {
       this.rules = {
+        fighters: ['rock', 'scissors', 'paper'],
         'rock': 'scissors',
         'scissors': 'paper',
         'paper': 'rock'
       };
     } else if (this.difficulty === 'hard') {
       this.rules = {
+        fighters: ['cat', 'mouse', 'elephant', 'dog', 'monkey'],
         'cat': ['mouse', 'monkey'],
         'mouse': ['elephant', 'dog'],
         'elephant': ['dog', 'cat'],

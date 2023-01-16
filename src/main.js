@@ -21,8 +21,9 @@ window.addEventListener('load', function() {
   showPlayerTokens();
   showScore();
 });
-easyModeSelector.addEventListener('click', setupGameBoard);
-hardModeSelector.addEventListener('click', setupGameBoard);
+modeSelectionDisplay.addEventListener('click', setupGameBoard);
+// easyModeSelector.addEventListener('click', setupGameBoard);
+// hardModeSelector.addEventListener('click', setupGameBoard);
 // easyModeSelector.addEventListener('click', setupEasyGame);
 // hardModeSelector.addEventListener('click', setupHardGame);
 changeGameButton.addEventListener('click', returnToGameSelect);

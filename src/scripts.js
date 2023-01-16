@@ -1,7 +1,5 @@
 // Global Variables
 var board = new Board({name: 'Human', token: './assets/human-token.png'}, {name: 'Computer', token: './assets/computer-token.png'});
-var easyFighters = ['rock', 'paper', 'scissors'];
-var hardFighters = ['cat', 'dog', 'mouse', 'monkey', 'elephant'];
 
 // DOM Variables
 var subtitle = document.getElementById('subtitle');
@@ -54,7 +52,7 @@ function setupHardGame() {
 
 function playEasyGame(event) {
   if (event.target.classList.contains('fighter')) {
-    board.updateWinnerEasy(event);
+    board.checkWinner(event);
     showScore();
     showResults();
     setTimeout(setupEasyGame, 3000);
@@ -63,7 +61,7 @@ function playEasyGame(event) {
 
 function playHardGame(event) {
   if (event.target.classList.contains('fighter')) {
-    board.updateWinnerHard(event);
+    board.checkWinner(event);
     showScore();
     showResults();
     setTimeout(setupHardGame, 3000);

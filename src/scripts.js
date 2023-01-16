@@ -2,6 +2,18 @@
 var board = new Board({name: 'Human', token: './assets/human-token.png'}, {name: 'Computer', token: './assets/computer-token.png'});
 var easyFighters = ['rock', 'paper', 'scissors'];
 var hardFighters = ['cat', 'dog', 'mouse', 'monkey', 'elephant'];
+// var easyRules = {
+//   'rock': 'scissors',
+//   'scissors': 'paper',
+//   'paper': 'rock'
+// };
+// var hardRules = {
+//   'cat': ['mouse', 'monkey'],
+//   'mouse': ['elephant', 'dog'],
+//   'elephant': ['dog', 'cat'],
+//   'dog': ['monkey', 'cat'],
+//   'monkey': ['elephant', 'mouse']
+// };
 
 // DOM Variables
 var subtitle = document.getElementById('subtitle');

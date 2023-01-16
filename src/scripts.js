@@ -2,18 +2,6 @@
 var board = new Board({name: 'Human', token: './assets/human-token.png'}, {name: 'Computer', token: './assets/computer-token.png'});
 var easyFighters = ['rock', 'paper', 'scissors'];
 var hardFighters = ['cat', 'dog', 'mouse', 'monkey', 'elephant'];
-// var easyRules = {
-//   'rock': 'scissors',
-//   'scissors': 'paper',
-//   'paper': 'rock'
-// };
-// var hardRules = {
-//   'cat': ['mouse', 'monkey'],
-//   'mouse': ['elephant', 'dog'],
-//   'elephant': ['dog', 'cat'],
-//   'dog': ['monkey', 'cat'],
-//   'monkey': ['elephant', 'mouse']
-// };
 
 // DOM Variables
 var subtitle = document.getElementById('subtitle');
@@ -45,39 +33,6 @@ hardModeSection.addEventListener('click', function() {
 });
 
 // Functions
-
-  // sandbox
-
-  // var rock = {
-  //   name: 'rock',
-  //   winsAgainst: 'scissors',
-  //   losesTo: 'paper'
-  // }
-  
-  // var paper = {
-  //   name: 'paper',
-  //   winsAgainst: 'rock',
-  //   losesTo: 'scissors'
-  // }
-  
-  // var scissors = {
-  //   name: 'scissors',
-  //   winsAgainst: 'paper',
-  //   losesTo: 'rock'
-  // }
-  
-//humanChar rock --- computerChar scissors
-
-  // function checkWinner(humanChar, computerChar) {
-  //   checkIfDraw();
-  //   if (humanChar.name === computerChar.winsAgainst) {
-  //     // human wins
-  //   } else {
-  //     // computer wins
-  //   }
-  // }
-  
-    // sandbox
 
 function setupEasyGame() {
   board.changeBoard('easy')

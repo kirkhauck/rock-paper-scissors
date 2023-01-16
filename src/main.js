@@ -40,6 +40,7 @@ function setupGameBoard() {
   game.changeDifficulty(event);
   game.changeRules();
   showGameBoard();
+  populateGameBoard();
 }
 
 function showGameBoard() {
@@ -47,6 +48,18 @@ function showGameBoard() {
   modeSelectionDisplay.classList.add('hidden');
   resultsSection.classList.add('hidden');
   changeGameButton.classList.remove('hidden');
+  gameBoard.classList.remove('hidden');
+}
+
+function populateGameBoard() {
+  var fighters = Object.keys(game.rules);
+  for (var i = 0; i < fighters.length; i++) {
+    gameBoard.innerHTML += `
+    <button class="fighter-button" type="button">
+      <img src="./assets/${fighters[i]}.png" alt="${fighters[i]}" id="${fighters[i]}" class="fighter">
+    </button>
+    `
+  }
 }
 
 // function setupEasyGame() {
@@ -107,7 +120,7 @@ function showPlayerTokens() {
 }
 
 function returnToGameSelect() {
-  game.changeBoard(undefined);
+  game.resetGame();
   subtitle.innerText = 'Choose your difficulty!';
   modeSelectionDisplay.classList.remove('hidden');
   resultsSection.classList.add('hidden');

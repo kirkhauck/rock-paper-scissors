@@ -18,14 +18,14 @@ class Game {
   changeRules() {
     if (this.difficulty === 'easy') {
       this.rules = {
-        fighters: ['rock', 'scissors', 'paper'],
+        // fighters: ['rock', 'scissors', 'paper'],
         'rock': ['scissors'],
         'scissors': ['paper'],
         'paper': ['rock']
       };
     } else if (this.difficulty === 'hard') {
       this.rules = {
-        fighters: ['cat', 'mouse', 'elephant', 'dog', 'monkey'],
+        // fighters: ['cat', 'mouse', 'elephant', 'dog', 'monkey'],
         'cat': ['mouse', 'monkey'],
         'mouse': ['elephant', 'dog'],
         'elephant': ['dog', 'cat'],
@@ -104,5 +104,11 @@ class Game {
       this.winner = 'computer';
       this.computer.score++;
     } 
+  }
+
+  resetGame() {
+    this.difficulty = undefined;
+    this.rules = undefined;
+    this.winner = undefined;
   }
 }

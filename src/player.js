@@ -10,8 +10,8 @@ class Player {
     if (this.name === 'Human') {
       this.fighter = event.target.id;
     } else {
-      var fighterIndex = Math.floor(Math.random() * board.rules.fighters.length);
-      this.fighter = board.rules.fighters[fighterIndex];
+      var fighterIndex = Math.floor(Math.random() * game.rules.fighters.length);
+      this.fighter = game.rules.fighters[fighterIndex];
     }
   }
 }

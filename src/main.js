@@ -1,5 +1,5 @@
 // Global Variables
-var board = new Board({name: 'Human', token: './assets/human-token.png'}, {name: 'Computer', token: './assets/computer-token.png'});
+var game = new Game({name: 'Human', token: './assets/human-token.png'}, {name: 'Computer', token: './assets/computer-token.png'});
 
 // DOM Variables
 var subtitle = document.getElementById('subtitle');
@@ -33,7 +33,7 @@ hardModeSection.addEventListener('click', function() {
 // Functions
 
 function setupEasyGame() {
-  board.changeBoard('easy')
+  game.changeBoard('easy')
   subtitle.innerText = 'Choose your fighter!';
   modeSelectionDisplay.classList.add('hidden');
   resultsSection.classList.add('hidden');
@@ -42,7 +42,7 @@ function setupEasyGame() {
 }
 
 function setupHardGame() {
-  board.changeBoard('hard')
+  game.changeBoard('hard')
   subtitle.innerText = 'Choose your fighter!';
   modeSelectionDisplay.classList.add('hidden');
   resultsSection.classList.add('hidden');
@@ -52,7 +52,7 @@ function setupHardGame() {
 
 function playGame(event) {
   if (event.target.classList.contains('fighter')) {
-    board.checkWinner(event);
+    game.checkWinner(event);
     showScore();
     showResults();
     setTimeout(setupEasyGame, 3000);
@@ -60,17 +60,17 @@ function playGame(event) {
 }
 
 function showResults() {
-  var humanFighter = board.human.fighter;
-  var computerFighter = board.computer.fighter;
+  var humanFighter = game.human.fighter;
+  var computerFighter = game.computer.fighter;
   easyModeSection.classList.add('hidden');
   hardModeSection.classList.add('hidden');
   changeGameButton.classList.add('hidden');
   resultsSection.classList.remove('hidden');
-  if (board.winner === 'human') {
+  if (game.winner === 'human') {
     subtitle.innerText = 'You win!';
-  } else if (board.winner === 'computer') {
+  } else if (game.winner === 'computer') {
     subtitle.innerText = 'You lose!';
-  } else if (board.winner === 'draw') {
+  } else if (game.winner === 'draw') {
     subtitle.innerText = 'It\'s a draw!';
   }
   resultsSection.innerHTML = `
@@ -80,17 +80,17 @@ function showResults() {
 }
 
 function showScore() {
-  humanScoreDisplay.innerText = board.human.score;
-  computerScoreDisplay.innerText = board.computer.score;
+  humanScoreDisplay.innerText = game.human.score;
+  computerScoreDisplay.innerText = game.computer.score;
 }
 
 function showPlayerTokens() {
-  humanToken.src = board.human.token;
-  computerToken.src = board.computer.token;
+  humanToken.src = game.human.token;
+  computerToken.src = game.computer.token;
 }
 
 function returnToGameSelect() {
-  board.changeBoard(undefined);
+  game.changeBoard(undefined);
   subtitle.innerText = 'Choose your difficulty!';
   modeSelectionDisplay.classList.remove('hidden');
   resultsSection.classList.add('hidden');

@@ -21,7 +21,9 @@ window.addEventListener('load', function() {
   showPlayerTokens();
   showScore();
 });
-modeSelectionDisplay.addEventListener('click', setupGameBoard);
+modeSelectionDisplay.addEventListener('click', function() {
+  setupGameBoard(event);
+});
 // easyModeSelector.addEventListener('click', setupGameBoard);
 // hardModeSelector.addEventListener('click', setupGameBoard);
 // easyModeSelector.addEventListener('click', setupEasyGame);
@@ -36,11 +38,14 @@ changeGameButton.addEventListener('click', returnToGameSelect);
 
 // Functions
 
-function setupGameBoard() {
-  game.changeDifficulty(event);
-  game.changeRules();
-  showGameBoard();
-  populateGameBoard();
+function setupGameBoard(event) {
+  var parentID = event.target.parentElement.id
+  if (parentID === 'easyModeSelector' || parentID === 'hardModeSelector') {
+    game.changeDifficulty(event);
+    game.changeRules();
+    showGameBoard();
+    populateGameBoard();
+  }
 }
 
 function showGameBoard() {
@@ -61,24 +66,6 @@ function populateGameBoard() {
     `
   }
 }
-
-// function setupEasyGame() {
-//   game.changeBoard('easy')
-//   subtitle.innerText = 'Choose your fighter!';
-//   modeSelectionDisplay.classList.add('hidden');
-//   resultsSection.classList.add('hidden');
-//   // easyModeSection.classList.remove('hidden');
-//   changeGameButton.classList.remove('hidden');
-// }
-
-// function setupHardGame() {
-//   game.changeBoard('hard')
-//   subtitle.innerText = 'Choose your fighter!';
-//   modeSelectionDisplay.classList.add('hidden');
-//   resultsSection.classList.add('hidden');
-//   // hardModeSection.classList.remove('hidden');
-//   changeGameButton.classList.remove('hidden');
-// }
 
 function playGame(event) {
   if (event.target.classList.contains('fighter')) {
@@ -119,12 +106,16 @@ function showPlayerTokens() {
   computerToken.src = game.computer.token;
 }
 
+function clearGameBoard() {
+  gameBoard.innerHTML = ''
+}
+
 function returnToGameSelect() {
   game.resetGame();
+  clearGameBoard();
   subtitle.innerText = 'Choose your difficulty!';
   modeSelectionDisplay.classList.remove('hidden');
   resultsSection.classList.add('hidden');
-  // easyModeSection.classList.add('hidden');
-  // hardModeSection.classList.add('hidden');
   changeGameButton.classList.add('hidden');
+  gameBoard.classList.add('hidden');
 }

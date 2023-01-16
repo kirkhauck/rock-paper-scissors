@@ -1,7 +1,5 @@
 // Global Variables
 var board = new Board({name: 'Human', token: './assets/human-token.png'}, {name: 'Computer', token: './assets/computer-token.png'});
-var easyFighters = ['rock', 'paper', 'scissors'];
-var hardFighters = ['cat', 'dog', 'mouse', 'monkey', 'elephant'];
 
 // DOM Variables
 var subtitle = document.getElementById('subtitle');
@@ -26,46 +24,13 @@ easyModeSelector.addEventListener('click', setupEasyGame);
 hardModeSelector.addEventListener('click', setupHardGame);
 changeGameButton.addEventListener('click', returnToGameSelect);
 easyModeSection.addEventListener('click', function() {
-  playEasyGame(event);
+  playGame(event);
 });
 hardModeSection.addEventListener('click', function() {
-  playHardGame(event)
+  playGame(event)
 });
 
 // Functions
-
-  // sandbox
-
-  // var rock = {
-  //   name: 'rock',
-  //   winsAgainst: 'scissors',
-  //   losesTo: 'paper'
-  // }
-  
-  // var paper = {
-  //   name: 'paper',
-  //   winsAgainst: 'rock',
-  //   losesTo: 'scissors'
-  // }
-  
-  // var scissors = {
-  //   name: 'scissors',
-  //   winsAgainst: 'paper',
-  //   losesTo: 'rock'
-  // }
-  
-//humanChar rock --- computerChar scissors
-
-  // function checkWinner(humanChar, computerChar) {
-  //   checkIfDraw();
-  //   if (humanChar.name === computerChar.winsAgainst) {
-  //     // human wins
-  //   } else {
-  //     // computer wins
-  //   }
-  // }
-  
-    // sandbox
 
 function setupEasyGame() {
   board.changeBoard('easy')
@@ -85,21 +50,12 @@ function setupHardGame() {
   changeGameButton.classList.remove('hidden');
 }
 
-function playEasyGame(event) {
+function playGame(event) {
   if (event.target.classList.contains('fighter')) {
-    board.getWinnerEasy(event);
+    board.checkWinner(event);
     showScore();
     showResults();
     setTimeout(setupEasyGame, 3000);
-  }
-}
-
-function playHardGame(event) {
-  if (event.target.classList.contains('fighter')) {
-    board.getWinnerHard(event);
-    showScore();
-    showResults();
-    setTimeout(setupHardGame, 3000);
   }
 }
 

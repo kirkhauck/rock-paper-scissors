@@ -15,6 +15,26 @@ class Game {
     }
   };
 
+  changeRules() {
+    if (this.difficulty === 'easy') {
+      this.rules = {
+        fighters: ['rock', 'scissors', 'paper'],
+        'rock': ['scissors'],
+        'scissors': ['paper'],
+        'paper': ['rock']
+      };
+    } else if (this.difficulty === 'hard') {
+      this.rules = {
+        fighters: ['cat', 'mouse', 'elephant', 'dog', 'monkey'],
+        'cat': ['mouse', 'monkey'],
+        'mouse': ['elephant', 'dog'],
+        'elephant': ['dog', 'cat'],
+        'dog': ['monkey', 'cat'],
+        'monkey': ['elephant', 'mouse']
+      };
+    }
+  }
+
   // change this.rules to this.board once functionality is confirmed
   // find way to use keys list instead of fighters if time allows
   // changeBoard(gameMode) {

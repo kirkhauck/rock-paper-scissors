@@ -38,16 +38,16 @@ changeGameButton.addEventListener('click', returnToGameSelect);
 
 function setupGameBoard() {
   game.changeDifficulty(event);
+  game.changeRules();
+  showGameBoard();
 }
 
-// function displayGameBoard() {
-//   game.changeBoard(event);
-//   subtitle.innerText = 'Choose your fighter!';
-//   modeSelectionDisplay.classList.add('hidden');
-//   resultsSection.classList.add('hidden');
-//   // easyModeSection.classList.remove('hidden');
-//   changeGameButton.classList.remove('hidden');
-// }
+function showGameBoard() {
+  subtitle.innerText = 'Choose your fighter!';
+  modeSelectionDisplay.classList.add('hidden');
+  resultsSection.classList.add('hidden');
+  changeGameButton.classList.remove('hidden');
+}
 
 // function setupEasyGame() {
 //   game.changeBoard('easy')

@@ -10,6 +10,7 @@
   </head>
   <body>
     <section class="column">
+      <!-- img src populated by Player -->
       <img id="humanToken" src="" alt="Player token">
       <h2>Human</h2>
       <p>Score: <span id="humanScore"><!--game.human.score--></span></p>
@@ -20,56 +21,28 @@
       <h2 id="subtitle">Choose your difficulty!</h2>
       <section id="modeSelectionSection" class="gameboard">
         <button id="easyModeSelector" class="mode-button" type="button">
-          <h3>Easy</h3>
-          <ul>
-            <li>🪨 beats ✂️</li>
-            <li>✂️ beats 📄</li>
-            <li>📄 beats 🪨</li>
-          </ul>
+          <h3 class="mode-header">Easy</h3>
+            <p>🪨 beats ✂️</p>
+            <p>✂️ beats 📄</p>
+            <p>📄 beats 🪨</p>
         </button>
         <button id="hardModeSelector" class="mode-button" type="button">
-          <h3>Hard</h3>
-          <ul>
-            <li>🐱 beats 🐭 and 🐵</li>
-            <li>🐭 beats 🐘 and 🐶</li>
-            <li>🐘 beats 🐶 and 🐱</li>
-            <li>🐶 beats 🐵 and 🐱</li>
-            <li>🐵 beats 🐘 and 🐭</li>
-          </ul>
+          <h3 class="mode-header">Hard</h3>
+            <p>🐱 beats 🐭 and 🐵</p>
+            <p>🐭 beats 🐘 and 🐶</p>
+            <p>🐘 beats 🐶 and 🐱</p>
+            <p>🐶 beats 🐵 and 🐱</p>
+            <p>🐵 beats 🐘 and 🐭</p>
         </button>
       </section>
-      <section id="easyModeSection" class="gameboard game-display hidden">
-        <button class="fighter-button" type="button">
-          <img src="./assets/rock.png" alt="rock" id="rock" class="fighter">
-        </button>
-        <button class="fighter-button" type="button">
-          <img src="./assets/paper.png" alt="paper" id="paper" class="fighter">
-        </button>
-        <button class="fighter-button" type="button">
-          <img src="./assets/scissors.png" alt="scissors" id="scissors" class="fighter">
-        </button>
-        </section>
-      <section id="hardModeSection" class="gameboard game-display hidden">
-        <button class="fighter-button" type="button">
-          <img src="./assets/cat.png" alt="cat" id="cat" class="fighter">
-        </button>
-        <button class="fighter-button" type="button">
-          <img src="./assets/dog.png" alt="dog" id="dog" class="fighter">
-        </button>
-        <button class="fighter-button" type="button">
-          <img src="./assets/mouse.png" alt="mouse" id="mouse" class="fighter">
-        </button>
-        <button class="fighter-button" type="button">
-          <img src="./assets/monkey.png" alt="monkey" id="monkey" class="fighter">
-        </button>
-        <button class="fighter-button" type="button">
-          <img src="./assets/elephant.png" alt="elephant" id="elephant" class="fighter">
-        </button>
+      <section id="gameBoard" class="gameboard game-display hidden">
+        <!-- populated by populateGameBoard -->
       </section>
       <section id="resultsSection" class="gameboard game-display hidden">
       </section>
     </main>
     <section class="column">
+      <!-- img src populated by Player -->
       <img id="computerToken" src="" alt="Computer token">
       <h2>Computer</h2>
       <p>Score: <span id="computerScore"><!--game.human.score--></span></p>

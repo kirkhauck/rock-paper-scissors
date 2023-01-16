@@ -8,8 +8,7 @@ var humanScoreDisplay = document.getElementById('humanScore');
 var computerToken = document.getElementById('computerToken');
 var computerScoreDisplay = document.getElementById('computerScore');
 var modeSelectionDisplay = document.getElementById('modeSelectionSection');
-var easyModeSection = document.getElementById('easyModeSection');
-var hardModeSection = document.getElementById('hardModeSection');
+var gameBoard = document.getElementById('gameBoard');
 var resultsSection = document.getElementById('resultsSection');
 var easyModeSelector = document.getElementById('easyModeSelector');
 var hardModeSelector = document.getElementById('hardModeSelector');
@@ -19,35 +18,46 @@ var changeGameButton = document.querySelector('button');
 window.addEventListener('load', function() {
   showPlayerTokens();
   showScore();
+})
+modeSelectionDisplay.addEventListener('click', function() {
+  setupGameBoard(event);
 });
-easyModeSelector.addEventListener('click', setupEasyGame);
-hardModeSelector.addEventListener('click', setupHardGame);
+
 changeGameButton.addEventListener('click', returnToGameSelect);
-easyModeSection.addEventListener('click', function() {
+
+gameBoard.addEventListener('click', function() {
   playGame(event);
 });
-hardModeSection.addEventListener('click', function() {
-  playGame(event)
-});
+
 
 // Functions
-
-function setupEasyGame() {
-  game.changeBoard('easy')
-  subtitle.innerText = 'Choose your fighter!';
-  modeSelectionDisplay.classList.add('hidden');
-  resultsSection.classList.add('hidden');
-  easyModeSection.classList.remove('hidden');
-  changeGameButton.classList.remove('hidden');
+function setupGameBoard(event) {
+  var parentID = event.target.parentElement.id
+  if (parentID === 'easyModeSelector' || parentID === 'hardModeSelector') {
+    game.changeDifficulty(event);
+    game.changeRules();
+    showGameBoard();
+    populateGameBoard();
+  }
 }
 
-function setupHardGame() {
-  game.changeBoard('hard')
+function showGameBoard() {
   subtitle.innerText = 'Choose your fighter!';
   modeSelectionDisplay.classList.add('hidden');
   resultsSection.classList.add('hidden');
-  hardModeSection.classList.remove('hidden');
   changeGameButton.classList.remove('hidden');
+  gameBoard.classList.remove('hidden');
+}
+
+function populateGameBoard() {
+  var fighters = Object.keys(game.rules);
+  for (var i = 0; i < fighters.length; i++) {
+    gameBoard.innerHTML += `
+    <button class="fighter-button" type="button">
+      <img src="./assets/${fighters[i]}.png" alt="${fighters[i]}" id="${fighters[i]}" class="fighter">
+    </button>
+    `
+  }
 }
 
 function playGame(event) {
@@ -55,15 +65,14 @@ function playGame(event) {
     game.checkWinner(event);
     showScore();
     showResults();
-    setTimeout(setupEasyGame, 3000);
+    setTimeout(showGameBoard, 3000);
   }
 }
 
 function showResults() {
   var humanFighter = game.human.fighter;
   var computerFighter = game.computer.fighter;
-  easyModeSection.classList.add('hidden');
-  hardModeSection.classList.add('hidden');
+  gameBoard.classList.add('hidden');
   changeGameButton.classList.add('hidden');
   resultsSection.classList.remove('hidden');
   if (game.winner === 'human') {
@@ -89,12 +98,16 @@ function showPlayerTokens() {
   computerToken.src = game.computer.token;
 }
 
+function clearGameBoard() {
+  gameBoard.innerHTML = ''
+}
+
 function returnToGameSelect() {
-  game.changeBoard(undefined);
+  game.resetGame();
+  clearGameBoard();
   subtitle.innerText = 'Choose your difficulty!';
   modeSelectionDisplay.classList.remove('hidden');
   resultsSection.classList.add('hidden');
-  easyModeSection.classList.add('hidden');
-  hardModeSection.classList.add('hidden');
   changeGameButton.classList.add('hidden');
+  gameBoard.classList.add('hidden');
 }

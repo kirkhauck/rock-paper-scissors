@@ -7,19 +7,23 @@ class Game {
     this.winner = undefined;
   }
 
-  changeBoard(gameMode) {
-    this.difficulty = gameMode;
-    this.winner = undefined;
+  changeDifficulty(event) {
+    if (event.target.parentElement.id === 'easyModeSelector') {
+      this.difficulty = 'easy';
+    } else if (event.target.parentElement.id === 'hardModeSelector') {
+      this.difficulty = 'hard';
+    }
+  };
+
+  changeRules() {
     if (this.difficulty === 'easy') {
       this.rules = {
-        fighters: ['rock', 'scissors', 'paper'],
         'rock': ['scissors'],
         'scissors': ['paper'],
         'paper': ['rock']
       };
     } else if (this.difficulty === 'hard') {
       this.rules = {
-        fighters: ['cat', 'mouse', 'elephant', 'dog', 'monkey'],
         'cat': ['mouse', 'monkey'],
         'mouse': ['elephant', 'dog'],
         'elephant': ['dog', 'cat'],
@@ -36,6 +40,7 @@ class Game {
   }
 
   checkWinner() {
+    this.winner = undefined;
     this.human.takeTurn(event);
     this.computer.takeTurn(event);
     this.checkIfDraw();
@@ -52,5 +57,11 @@ class Game {
       this.winner = 'computer';
       this.computer.score++;
     } 
+  }
+
+  resetGame() {
+    this.difficulty = undefined;
+    this.rules = undefined;
+    this.winner = undefined;
   }
 }

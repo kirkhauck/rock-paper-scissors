@@ -32,6 +32,11 @@ main {
   background-color: #4280b0;
 }
 
+p {
+  margin: 0;
+  padding-bottom: 5px;
+}
+
 .column {
   width: 20%;
   padding-top: 20px;
@@ -106,16 +111,6 @@ img {
   padding: 10px;
 }
 
-p {
-  margin: 0;
-  padding-bottom: 5px;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
 .mode-button:hover {
   background-color: #0f1c2b;
 }
@@ -139,10 +134,10 @@ ul {
   height: 220px;
 }
 
-.fighter:hover {
+.fighter-button:hover {
   background-color: #3b76a2
 }
 
-.fighter:active {
+.fighter-button:active {
   box-shadow: inset 0px 0px 5px #000000;
 }

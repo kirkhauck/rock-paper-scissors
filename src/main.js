@@ -103,8 +103,8 @@ function returnToModeSelection() {
 }
 
 function showScore() {
-  humanScore.innerText = game.human.score;
-  computerScore.innerText = game.computer.score;
+  humanScore.innerText = `Score: ${game.human.score}`;
+  computerScore.innerText = `Score: ${game.computer.score}`;
 }
 
 function showPlayerTokens() {

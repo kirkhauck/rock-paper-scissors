@@ -44,10 +44,10 @@ function setupGameBoard(event) {
 
 function showGameBoard() {
   subtitle.innerText = 'Choose your fighter!';
-  modeSelection.classList.add('hidden');
-  results.classList.add('hidden');
-  changeGameButton.classList.remove('hidden');
-  gameBoard.classList.remove('hidden');
+  show(gameBoard);
+  show(changeGameButton);
+  hide(modeSelection);
+  hide(results);
 }
 
 function populateGameBoard() {
@@ -75,9 +75,9 @@ function showResults() {
   var humanFighter = game.human.fighter;
   var computerFighter = game.computer.fighter;
 
-  gameBoard.classList.add('hidden');
-  changeGameButton.classList.add('hidden');
-  results.classList.remove('hidden');
+  show(results);
+  hide(gameBoard);
+  hide(changeGameButton);
   if (game.winner === 'human') {
     subtitle.innerText = 'You win!';
   } else if (game.winner === 'computer') {
@@ -90,6 +90,16 @@ function showResults() {
     <img src="assets/${humanFighter}.png" alt="${humanFighter}" id="${humanFighter}" class="fighter">
     <img src="assets/${computerFighter}.png" alt="${computerFighter}" id="${computerFighter}" class="fighter">
   `;
+}
+
+function returnToModeSelection() {
+  game.resetGame();
+  clearGameBoard();
+  subtitle.innerText = 'Choose your difficulty!';
+  show(modeSelection);
+  hide(gameBoard);
+  hide(results);
+  hide(changeGameButton);
 }
 
 function showScore() {
@@ -106,12 +116,10 @@ function clearGameBoard() {
   gameBoard.innerHTML = ''
 }
 
-function returnToModeSelection() {
-  game.resetGame();
-  clearGameBoard();
-  subtitle.innerText = 'Choose your difficulty!';
-  modeSelection.classList.remove('hidden');
-  results.classList.add('hidden');
-  changeGameButton.classList.add('hidden');
-  gameBoard.classList.add('hidden');
+function hide(element) {
+  element.classList.add('hidden');
+}
+
+function show(element) {
+  element.classList.remove('hidden');
 }

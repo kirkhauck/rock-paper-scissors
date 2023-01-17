@@ -8,9 +8,9 @@ class Game {
   }
 
   changeDifficulty(event) {
-    if (event.target.parentElement.id === 'easyModeSelector') {
+    if (event.target.parentElement.id === 'easyModeButton') {
       this.difficulty = 'easy';
-    } else if (event.target.parentElement.id === 'hardModeSelector') {
+    } else if (event.target.parentElement.id === 'hardModeButton') {
       this.difficulty = 'hard';
     }
   };

@@ -18,17 +18,17 @@ class Game {
   changeRules() {
     if (this.difficulty === 'easy') {
       this.rules = {
-        'rock': ['scissors'],
-        'scissors': ['paper'],
-        'paper': ['rock']
+        rock: 'scissors',
+        scissors: 'paper',
+        paper: 'rock'
       };
     } else if (this.difficulty === 'hard') {
       this.rules = {
-        'cat': ['mouse', 'monkey'],
-        'mouse': ['elephant', 'dog'],
-        'elephant': ['dog', 'cat'],
-        'dog': ['monkey', 'cat'],
-        'monkey': ['elephant', 'mouse']
+        cat: ['mouse', 'monkey'],
+        mouse: ['elephant', 'dog'],
+        elephant: ['dog', 'cat'],
+        dog: ['monkey', 'cat'],
+        monkey: ['elephant', 'mouse']
       };
     }
   }

@@ -8,9 +8,9 @@ class Game {
   }
 
   changeDifficulty(event) {
-    if (event.target.parentElement.id === 'easyModeSelector') {
+    if (event.target.parentElement.id === 'easyModeButton') {
       this.difficulty = 'easy';
-    } else if (event.target.parentElement.id === 'hardModeSelector') {
+    } else if (event.target.parentElement.id === 'hardModeButton') {
       this.difficulty = 'hard';
     }
   };
@@ -36,6 +36,7 @@ class Game {
   checkIfDraw() {
     if (this.human.fighter === this.computer.fighter) {
       this.winner = 'draw';
+      return true;
     }
   }
 
@@ -43,7 +44,6 @@ class Game {
     this.winner = undefined;
     this.human.takeTurn(event);
     this.computer.takeTurn(event);
-    this.checkIfDraw();
     var humanFighter = this.human.fighter;
     var computerFighter = this.computer.fighter;
     for (var i = 0; i < this.rules[humanFighter].length; i++) {
@@ -53,7 +53,8 @@ class Game {
         return;
       }
     }
-    if (this.winner !== 'draw') {
+    
+    if (!this.checkIfDraw()) {
       this.winner = 'computer';
       this.computer.score++;
     } 
@@ -63,5 +64,7 @@ class Game {
     this.difficulty = undefined;
     this.rules = undefined;
     this.winner = undefined;
+    this.human.resetFighter();
+    this.computer.resetFighter();
   }
 }

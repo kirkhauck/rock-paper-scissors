@@ -13,20 +13,20 @@
       <!-- img src populated by Player -->
       <img id="humanToken" src="" alt="Player token">
       <h2>Human</h2>
-      <p>Score: <span id="humanScore"><!--game.human.score--></span></p>
+      <p id="humanScore"><!-- populated by showScore --></p>
       <button class="nav-button hidden">Change Game</button>
     </section>
     <main>
       <h1>Rock, Paper Scissors</h1>
       <h2 id="subtitle">Choose your difficulty!</h2>
-      <section id="modeSelectionSection" class="gameboard">
-        <button id="easyModeSelector" class="mode-button" type="button">
+      <section id="modeSelection" class="gameboard mode-selection-display">
+        <button id="easyModeButton" class="mode-button" type="button">
           <h3 class="mode-header">Easy</h3>
             <p>🪨 beats ✂️</p>
             <p>✂️ beats 📄</p>
             <p>📄 beats 🪨</p>
         </button>
-        <button id="hardModeSelector" class="mode-button" type="button">
+        <button id="hardModeButton" class="mode-button" type="button">
           <h3 class="mode-header">Hard</h3>
             <p>🐱 beats 🐭 and 🐵</p>
             <p>🐭 beats 🐘 and 🐶</p>
@@ -38,14 +38,15 @@
       <section id="gameBoard" class="gameboard game-display hidden">
         <!-- populated by populateGameBoard -->
       </section>
-      <section id="resultsSection" class="gameboard game-display hidden">
+      <section id="results" class="gameboard game-display result-display hidden">
+        <!-- populated by showResults -->
       </section>
     </main>
     <section class="column">
       <!-- img src populated by Player -->
       <img id="computerToken" src="" alt="Computer token">
       <h2>Computer</h2>
-      <p>Score: <span id="computerScore"><!--game.human.score--></span></p>
+      <p id="computerScore"><!-- populated by showScore --></p>
     </section>
     <script src="./src/player.js"></script>
     <script src="./src/game.js"></script>

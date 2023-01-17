@@ -32,8 +32,7 @@ changeGameButton.addEventListener('click', returnToModeSelection);
 
 // Functions
 function setupGameBoard(event) {
-  var parentID = event.target.parentElement.id
-
+  var parentID = event.target.parentElement.id;
   if (parentID === 'easyModeButton' || parentID === 'hardModeButton') {
     game.changeDifficulty(event);
     game.changeRules();
@@ -52,13 +51,12 @@ function showGameBoard() {
 
 function populateGameBoard() {
   var fighters = Object.keys(game.rules);
-
   for (var i = 0; i < fighters.length; i++) {
     gameBoard.innerHTML += `
     <button class="fighter-button" type="button">
       <img src="./assets/${fighters[i]}.png" alt="${fighters[i]}" id="${fighters[i]}" class="fighter">
     </button>
-    `
+    `;
   }
 }
 
@@ -74,7 +72,6 @@ function playGame(event) {
 function showResults() {
   var humanFighter = game.human.fighter;
   var computerFighter = game.computer.fighter;
-
   show(results);
   hide(gameBoard);
   hide(changeGameButton);
@@ -113,7 +110,7 @@ function showPlayerTokens() {
 }
 
 function clearGameBoard() {
-  gameBoard.innerHTML = ''
+  gameBoard.innerHTML = '';
 }
 
 function hide(element) {

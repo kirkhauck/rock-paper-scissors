@@ -18,17 +18,17 @@ class Game {
   changeRules() {
     if (this.difficulty === 'easy') {
       this.rules = {
-        'rock': ['scissors'],
-        'scissors': ['paper'],
-        'paper': ['rock']
+        rock: 'scissors',
+        scissors: 'paper',
+        paper: 'rock'
       };
     } else if (this.difficulty === 'hard') {
       this.rules = {
-        'cat': ['mouse', 'monkey'],
-        'mouse': ['elephant', 'dog'],
-        'elephant': ['dog', 'cat'],
-        'dog': ['monkey', 'cat'],
-        'monkey': ['elephant', 'mouse']
+        cat: ['mouse', 'monkey'],
+        mouse: ['elephant', 'dog'],
+        elephant: ['dog', 'cat'],
+        dog: ['monkey', 'cat'],
+        monkey: ['elephant', 'mouse']
       };
     }
   }
@@ -46,15 +46,10 @@ class Game {
     this.computer.takeTurn(event);
     var humanFighter = this.human.fighter;
     var computerFighter = this.computer.fighter;
-    for (var i = 0; i < this.rules[humanFighter].length; i++) {
-      if (this.rules[humanFighter][i] === computerFighter) {
-        this.winner = 'human';
-        this.human.score++;
-        return;
-      }
-    }
-    
-    if (!this.checkIfDraw()) {
+    if (this.rules[humanFighter].includes(computerFighter)) {
+      this.winner = 'human';
+      this.human.score++;
+    } else if (!this.checkIfDraw()) {
       this.winner = 'computer';
       this.computer.score++;
     } 
